@@ -111,7 +111,7 @@ def main(input_file, out_dir, out_file):
     find_orfs(reads, translationTable.trans_table, orf_dict)
     write_output_fasta(out_dir, out_file, orf_dict)
     duration = time.time() - start
-    print("Process %.0f sequences in %.4f" % (num_seq, duration))
+    print("Processed %.0f sequences in %.4fs" % (num_seq, duration))
 
 
 if __name__ == '__main__':
