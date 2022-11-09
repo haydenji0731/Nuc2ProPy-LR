@@ -5,6 +5,7 @@ import time
 
 num_seq = 0
 
+
 class db_index:
     def __init__(self, kmer_size):
         self.kmer_table = dict()
