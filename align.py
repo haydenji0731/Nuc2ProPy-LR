@@ -1,9 +1,13 @@
 # import packages
 import numpy
 import findOrf
+import sys
 
-# def kmer_prefilter(aa_seq, prot_db):
-#     prot_db.
+
+def kmer_prefilter(aa_seq, prot_db, kmer_size):
+    for i in range(0, len(aa_seq)):
+        kmer = aa_seq[i:i+kmer_size]
+    # implement double diagonal match
 
 
 def smith_waterman_align(x, y, s):
@@ -27,9 +31,9 @@ def compute_cost(xc, yc):
     return -1
 
 
-def main():
+def main(kmer_size):
     print("implement sw alignment")
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1])
