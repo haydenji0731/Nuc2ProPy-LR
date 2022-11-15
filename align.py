@@ -1,4 +1,5 @@
 # import packages
+
 import numpy
 import buildIndex
 import sys
@@ -8,7 +9,6 @@ import blosum as bl
 import time
 
 num_seqs = 0
-
 
 def kmer_prefilter(aa_seq, prot_db, kmer_size):
     # TODO: implement consecutive diagonal matches?
@@ -38,7 +38,7 @@ def kmer_prefilter(aa_seq, prot_db, kmer_size):
 
 
 def sw_align(x, y, sub_mat):
-    V = numpy.zeros((len(x) + 1, len(y) + 1), dtype=int)
+    V = numpy.zeros(len(x) + 1, len(y) + 1, dtype=int)
     for i in range(1, len(x) + 1):
         for j in range(1, len(y) + 1):
             diag_c = sub_mat[x[i - 1] + y[j - 1]]
