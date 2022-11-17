@@ -9,6 +9,9 @@ import blosum as bl
 import time
 
 num_seqs = 0
+aln_dict = {}
+seq_dict = {}
+
 
 def kmer_prefilter(aa_seq, prot_db, kmer_size):
     # TODO: implement consecutive diagonal matches?
@@ -125,12 +128,13 @@ def main(query_file, target_file, kmer_size):
     proteins = pyfastx.Fastx(target_file)
     prot_db = buildIndex.db_index(kmer_size, proteins)
     sub_mat = bl.BLOSUM(62)
-    aln_dict = {}
-    seq_dict = {}
+    global aln_dict
+    global seq_dict
     for query in querys:
         global num_seqs
         num_seqs += 1
         print("Query is " + query[0])
+        # TODO: see if seq_dict is really needed? if not, remove
         seq_dict[query[0]] = query[1]
         query_seq = query[1]
         if len(query_seq) < kmer_size:

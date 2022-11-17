@@ -3,15 +3,16 @@ import sys
 import translationTable
 import pyfastx
 import time
+import os
 
 num_seq = 0
+aa_dict = {}
 templ = "ACGT"
 rev_compl = "TGCA"
 
 
 def extract_aa(reads, trans_table):
-
-    aa_dict = {}
+    global aa_dict
     for read in reads:
         global num_seq
         num_seq += 1
@@ -31,21 +32,34 @@ def extract_aa(reads, trans_table):
                     aa_seq_rev += trans_table[0][codon_rev][0]
                 else:
                     break
-            aa_seqs.append((aa_seq, i+1))
-            aa_seqs.append((aa_seq_rev, -(i+1)))
+            aa_seqs.append((aa_seq, i + 1))
+            aa_seqs.append((aa_seq_rev, -(i + 1)))
         aa_dict[read[0]] = aa_seqs
-    return aa_seqs
+    # return aa_seqs
 
 
-def main(input_file):
+def write_output_fasta(out_dir, fa_name):
+    global aa_dict
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
+    out_fa_path = os.path.join(out_dir, fa_name)
+    print(out_fa_path)
+    with open(out_fa_path, 'w') as fh:
+        for read_name in aa_dict.keys():
+            aa_seqs = aa_dict[read_name]
+            for seq in aa_seqs:
+                fh.write(">" + read_name + "\n")
+                fh.write(seq[0] + "\n")
+
+
+def main(input_file, out_dir, out_file):
     start = time.time()
     reads = pyfastx.Fastx(input_file)
-    aa_seqs = extract_aa(reads, translationTable.trans_table)
-    # print(aa_seqs)
+    extract_aa(reads, translationTable.trans_table)
+    write_output_fasta(out_dir, out_file)
     duration = time.time() - start
     print("Processed %.0f sequences in %.4fs" % (num_seq, duration))
 
 
-
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2], sys.argv[3])
