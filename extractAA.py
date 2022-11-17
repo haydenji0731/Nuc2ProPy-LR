@@ -43,7 +43,7 @@ def write_output_fasta(out_dir, fa_name):
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     out_fa_path = os.path.join(out_dir, fa_name)
-    print(out_fa_path)
+    # print(out_fa_path)
     with open(out_fa_path, 'w') as fh:
         for read_name in aa_dict.keys():
             aa_seqs = aa_dict[read_name]
