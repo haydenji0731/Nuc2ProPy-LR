@@ -7,6 +7,8 @@ import translationTable
 import time
 
 num_seq = 0
+invalid_seq = 0
+orf_dict = {}
 templ = "ACGT"
 rev_compl = "TGCA"
 
@@ -27,12 +29,14 @@ def insert_stop(codon_dict, rf, stop_idx):
                           "stop": [stop_idx]}
 
 
-def find_orfs(reads, trans_table, orf_dict):
+def find_orfs(reads, trans_table):
     for read in reads:
         global num_seq
+        global orf_dict
+        global invalid_seq
         num_seq += 1
         codon_dict = {}
-        seq = read[1]
+        seq = read[1].upper()
         rev_compl_trans = str.maketrans(templ, rev_compl)
         seq_rev_compl = seq.translate(rev_compl_trans)[::-1]
         for i in range(len(seq) - 2):
@@ -51,7 +55,8 @@ def find_orfs(reads, trans_table, orf_dict):
         longest_orf = find_longest_orf(codon_dict)
         if longest_orf["len"] == 0:
             # allow partial 3' as well?
-            print(read[0] + " doesn't contain a valid orf!")
+            # print(read[0] + " doesn't contain a valid orf!")
+            invalid_seq += 1
         else:
             aa_seq = extract_aa_seq(longest_orf, seq, seq_rev_compl, trans_table)
             orf_dict[read[0]] = {"start": longest_orf["start"],
@@ -93,7 +98,8 @@ def extract_aa_seq(orf, seq, seq_rev_compl, trans_table):
     return aa_seq
 
 
-def write_output_fasta(out_dir, fa_name, orf_dict):
+def write_output_fasta(out_dir, fa_name):
+    global orf_dict
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     out_fa_path = os.path.join(out_dir, fa_name)
@@ -107,11 +113,11 @@ def write_output_fasta(out_dir, fa_name, orf_dict):
 def main(input_file, out_dir, out_file):
     start = time.time()
     reads = pyfastx.Fastx(input_file)
-    orf_dict = {}
-    find_orfs(reads, translationTable.trans_table, orf_dict)
-    write_output_fasta(out_dir, out_file, orf_dict)
+    find_orfs(reads, translationTable.trans_table)
+    write_output_fasta(out_dir, out_file)
     duration = time.time() - start
-    print("Processed %.0f sequences in %.4fs" % (num_seq, duration))
+    print("Processed %.0f sequences in %.4fs. Of all, %.0f sequences did not contain a valid orf." % (num_seq, duration,
+                                                                                                      invalid_seq))
 
 
 if __name__ == '__main__':
