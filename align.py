@@ -12,7 +12,6 @@ num_seqs = 0
 aln_dict = {}
 seq_dict = {}
 
-
 def kmer_prefilter(aa_seq, prot_db, kmer_size):
     # TODO: implement consecutive diagonal matches?
     prefilter_set = set()
