@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# Protein Search Project
-
-We aim to convert DNA sequence reads into amino acid sequences and then search against large-scale protein databases.
-=======
 # Long DNA Read to Protein Aligner
 
 We aim to convert DNA sequence reads into amino acid sequences and then search against large-scale protein databases.
@@ -34,6 +29,3 @@ Proceed by reading the help message. Additionally, there are some benchmark data
 ```
 $ ./lonblast --out-dir ../results --out-file test_flanked.aln --aa-file refseq_grch38_unflanked_cds_head_AA.n16.aa.fa ../data/refseq_grch38_flanked_cds_head.n16.fa ../data/GCF_000001405.40_GRCh38.p14_protein.fasta
 ```
-
-
->>>>>>> 3a291efe2cc427a6e05183c86709d95762995408
