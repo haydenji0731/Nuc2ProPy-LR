@@ -54,6 +54,7 @@ def main():
         sys.exit(1)
 
     extract_orf = args.extract_orf
+    # print(extract_orf)
 
     # if extract orf is true but if orf file not provided, exit
     orf_file = args.orf_file

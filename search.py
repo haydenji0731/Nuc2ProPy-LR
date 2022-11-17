@@ -7,36 +7,57 @@ import time
 import pyfastx
 import translationTable
 import sys
+import os
 # supports BLOSUM 45, 50, 62, 80, & 90
 import blosum as bl
 
 # define global variables
 aln_dict = {}
-seq_dict = {}
+# seq_dict = {}
+num_seq = 0
+no_aln_seq = 0
 
 
-def main(query_file, target_file, out_dir, out_file, aa_file, extract_orf, kmer_size, orf_file=None):
+def write_aln(out_dir, out_file):
+    global aln_dict
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
+    out_fa_path = os.path.join(out_dir, out_file)
+    with open(out_fa_path, 'w') as fh:
+        for query in aln_dict.keys():
+            aln = aln_dict[query]
+            fh.write(query + "\t" + aln[0] + "\t" + str(aln[1]) + "\n")
+
+
+def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract_orf, orf_file=None):
     print("successfully entered search main!")
     start = time.time()
     reads = pyfastx.Fastx(query_file)
     if extract_orf:
         findOrf.find_orfs(reads, translationTable.trans_table)
         print(len(findOrf.orf_dict.keys()))
-        findOrf.write_output_fasta(out_dir, out_file)
+        findOrf.write_output_fasta(out_dir, orf_file)
         duration = time.time() - start
-        print("Processed %.0f sequences in %.4fs. Of all, %.0f sequences did not contain a valid orf."
+        print("Extracted orfs from %.0f reads in %.4fs. Of all, %.0f reads did not contain a valid orf."
               % (findOrf.num_seq, duration, findOrf.invalid_seq))
     else:
         extractAA.extract_aa(reads, translationTable.trans_table)
         extractAA.write_output_fasta(out_dir, aa_file)
         duration = time.time() - start
-        print("Processed %.0f sequences in %.4fs." % (extractAA.num_seq, duration))
+        print("Translated %.0f reads to amino acid sequences in %.4fs." % (extractAA.num_seq, duration))
+        start = time.time()
     proteins = pyfastx.Fastx(target_file)
     prot_db = buildIndex.db_index(kmer_size, proteins)
+    duration = time.time() - start
+    print("Indexed target db containing %.0f protein sequences in %.4fs." % (prot_db.num_seq, duration))
+    start = time.time()
     sub_mat = bl.BLOSUM(62)
     global aln_dict
-    global seq_dict
+    global num_seq
+    global no_aln_seq
+    # global seq_dict
     for read_name in extractAA.aa_dict.keys():
+        num_seq += 1
         aa_seqs = extractAA.aa_dict[read_name]
         max_rf = 0
         global_max = -1
@@ -45,18 +66,20 @@ def main(query_file, target_file, out_dir, out_file, aa_file, extract_orf, kmer_
         # align all 6 reading frames
         for query in aa_seqs:
             rf = query[1]
+            print("Processing reading frame %.0f" % rf)
             seq = query[0]
+            # print(seq)
             if len(seq) < kmer_size:
                 print("Query amino acid sequence is too short compared to the kmer size. No significant sequence "
                       "similarity is expected.")
             else:
-                query_pref = extractAA.kmer_prefilter(seq, prot_db, kmer_size)
+                query_pref = align.kmer_prefilter(seq, prot_db, kmer_size)
                 if len(query_pref) > 0:
                     local_max = -1
                     local_aln = ()
                     local_mat = None
                     for target_idx in query_pref:
-                        sw_mat, aln_score = extractAA.sw_align(seq, prot_db.seq_index[target_idx][0], sub_mat)
+                        sw_mat, aln_score = align.sw_align(seq, prot_db.seq_index[target_idx][0], sub_mat)
                         if aln_score > local_max:
                             local_max = aln_score
                             local_mat = sw_mat
@@ -71,10 +94,17 @@ def main(query_file, target_file, out_dir, out_file, aa_file, extract_orf, kmer_
                     print("No matching kmer was found between query and target in reading frame %.0f" % rf)
         if global_max != -1:
             aln_dict[read_name] = global_aln
+            print("Optimal alignment:")
+            print("\tProtein is: " + global_aln[0])
+            print("\tAlignment score is: " + str(global_aln[1]))
             print("Optimal alignment for read " + read_name + " was found in reading frame %.0f" % max_rf)
         else:
+            no_aln_seq += 1
             print("No alignment was found for read " + read_name)
-
+    write_aln(out_dir, out_file)
+    duration = time.time() - start
+    print("Aligned %.0f reads / sequences in %.4fs. Of all, %.0f reads / sequences did not find an alignment."
+          % (num_seq, duration, no_aln_seq))
 
 
 
