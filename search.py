@@ -26,7 +26,7 @@ def write_aln(out_dir, out_file):
     with open(out_fa_path, 'w') as fh:
         for query in aln_dict.keys():
             aln = aln_dict[query]
-            fh.write(query + "\t" + aln[0] + "\t" + str(aln[1]) + "\n")
+            fh.write(query + "\t" + aln[0] + "\t" + aln[1] + "\t" + str(aln[2]) + "\n")
 
 
 def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract_orf, orf_file=None):
@@ -79,12 +79,12 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract
                     local_aln = ()
                     local_mat = None
                     for target_idx in query_pref:
-                        sw_mat, aln_score = align.sw_align(seq, prot_db.seq_index[target_idx][0], sub_mat)
+                        sw_mat, aln_score = align.sw_align(seq, prot_db.seq_index[target_idx][1], sub_mat)
                         if aln_score > local_max:
                             local_max = aln_score
                             local_mat = sw_mat
                             # target name, score
-                            local_aln = (prot_db.seq_index[target_idx][1], aln_score)
+                            local_aln = (prot_db.seq_index[target_idx][0], prot_db.seq_index[target_idx][2], aln_score)
                     if local_max > global_max:
                         global_max = local_max
                         global_mat = local_mat
@@ -95,8 +95,9 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract
         if global_max != -1:
             aln_dict[read_name] = global_aln
             print("Optimal alignment:")
-            print("\tProtein is: " + global_aln[0])
-            print("\tAlignment score is: " + str(global_aln[1]))
+            print("\tProtein ID is: " + global_aln[0])
+            print("\tProtein product is: " + global_aln[1])
+            print("\tAlignment score is: " + str(global_aln[2]))
             print("Optimal alignment for read " + read_name + " was found in reading frame %.0f" % max_rf)
         else:
             no_aln_seq += 1

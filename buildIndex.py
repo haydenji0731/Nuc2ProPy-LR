@@ -15,7 +15,7 @@ class db_index:
             idx = 0
             for protein in proteins:
                 # seq, seq info
-                self.seq_index[idx] = (protein[1], protein[2])
+                self.seq_index[idx] = (protein[0], protein[1], protein[2])
                 self.insert(protein[1], idx)
                 idx += 1
 
@@ -35,7 +35,7 @@ class db_index:
         return False
 
 
-def main(input_file, kmer_size, out_dir, out_file):
+def main(input_file, kmer_size):
     start = time.time()
     proteins = pyfastx.Fastx(input_file)
     prot_db = db_index(kmer_size, proteins)
@@ -45,4 +45,4 @@ def main(input_file, kmer_size, out_dir, out_file):
 
 if __name__ == '__main__':
     # TODO: replace this with flags
-    main(sys.argv[1], int(sys.argv[2]), sys.argv[3], sys.argv[4])
+    main(sys.argv[1], int(sys.argv[2]))
