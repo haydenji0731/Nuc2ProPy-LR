@@ -79,7 +79,9 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract
                     local_aln = ()
                     local_mat = None
                     for target_idx in query_pref:
-                        sw_mat, aln_score = align.sw_align(seq, prot_db.seq_index[target_idx][1], sub_mat)
+                        # sw_mat, aln_score = align.sw_align(seq, prot_db.seq_index[target_idx][1], sub_mat)
+                        sw_mat, aln_score = align.sw_align_affine(seq, prot_db.seq_index[target_idx][1],
+                                                                  11, 1, sub_mat)
                         if aln_score > local_max:
                             local_max = aln_score
                             local_mat = sw_mat

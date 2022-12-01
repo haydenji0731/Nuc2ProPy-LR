@@ -12,6 +12,7 @@ num_seqs = 0
 aln_dict = {}
 seq_dict = {}
 
+
 def kmer_prefilter(aa_seq, prot_db, kmer_size):
     # TODO: implement consecutive diagonal matches?
     prefilter_set = set()
@@ -44,13 +45,28 @@ def sw_align(x, y, sub_mat):
     for i in range(1, len(x) + 1):
         for j in range(1, len(y) + 1):
             diag_c = sub_mat[x[i - 1] + y[j - 1]]
-            vert_c = sub_mat[x[i - 1] + "*"]
-            horz_c = sub_mat["*" + y[j - 1]]
-            V[i, j] = max(V[i - 1, j - 1] + sub_mat[x[i - 1] + y[j - 1]],  # diagonal
-                          V[i - 1, j] + sub_mat[x[i - 1] + "*"],  # vertical
-                          V[i, j - 1] + sub_mat["*" + y[j - 1]],  # horizontal
+            # differentiate between a gap and a stop codon
+            if x[i - 1] == "*":
+                vert_c = -4.0
+            else:
+                vert_c = sub_mat[x[i - 1] + "*"]
+            if y[j - 1] == "*":
+                horz_c = -4.0
+            else:
+                horz_c = sub_mat["*" + y[j - 1]]
+            V[i, j] = max(V[i - 1, j - 1] + diag_c,
+                          V[i - 1, j] + vert_c,
+                          V[i, j - 1] + horz_c,
                           0)
-    # print_mat(V)
+            # V[i, j] = max(V[i - 1, j - 1] + sub_mat[x[i - 1] + y[j - 1]],  # diagonal
+            #               V[i - 1, j] + sub_mat[x[i - 1] + "*"],  # vertical
+            #               V[i, j - 1] + sub_mat["*" + y[j - 1]],  # horizontal
+            #              0)
+            if (i == len(x)):
+                print((diag_c, vert_c, horz_c))
+    # print first row
+    # print(V[len(x) - 1])
+    # print(V[len(x)])
     argmax = numpy.where(V == V.max())
     if len(argmax[0]) >= 2:
         argmax = (numpy.array([argmax[0][0]]), numpy.array([argmax[1][0]]))
@@ -69,8 +85,10 @@ def sw_align_affine(x, y, go, ge, sub_mat):
         for j in range(1, len(y) + 1):
             E[i, j] = max(E[i, j - 1] - ge, H[i, j - 1] - go)
             F[i, j] = max(F[i - 1, j] - ge, H[i - 1, j] - go)
-            H[i, j] = max(0, E[i, j], F[i, j], H[i - 1, j - 1] - sub_mat[x[i - 1] + y[j - 1]])
-    # print_mat(H)
+            temp = H[i - 1, j - 1] + sub_mat[x[i - 1] + y[j - 1]]
+            H[i, j] = max(0, E[i, j], F[i, j], temp)
+    # print(H[len(x) - 1])
+    # print(H[len(x)])
     argmax = numpy.where(H == H.max())
     if len(argmax[0]) >= 2:
         argmax = (numpy.array([argmax[0][0]]), numpy.array([argmax[1][0]]))
@@ -145,9 +163,9 @@ def main(query_file, target_file, kmer_size):
             if len(query_pref) > 0:
                 for target_idx in query_pref:
                     # print("Target is " + prot_db.seq_index[target_idx][1])
-                    sw_mat, aln_score = sw_align(query_seq, prot_db.seq_index[target_idx][0], sub_mat)
+                    # sw_mat, aln_score = sw_align(query_seq, prot_db.seq_index[target_idx][0], sub_mat)
                     # matches blastp parameter
-                    # sw_mat, aln_score = sw_align_affine(query_seq, prot_db.seq_index[target_idx][0], 11, 1, sub_mat)
+                    sw_mat, aln_score = sw_align_affine(query_seq, prot_db.seq_index[target_idx][0], 11, 1, sub_mat)
                     if aln_score > max_aln_score:
                         # store target name, score
                         max_aln_score = aln_score
