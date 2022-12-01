@@ -62,8 +62,6 @@ def sw_align(x, y, sub_mat):
             #               V[i - 1, j] + sub_mat[x[i - 1] + "*"],  # vertical
             #               V[i, j - 1] + sub_mat["*" + y[j - 1]],  # horizontal
             #              0)
-            if (i == len(x)):
-                print((diag_c, vert_c, horz_c))
     # print first row
     # print(V[len(x) - 1])
     # print(V[len(x)])
@@ -87,8 +85,6 @@ def sw_align_affine(x, y, go, ge, sub_mat):
             F[i, j] = max(F[i - 1, j] - ge, H[i - 1, j] - go)
             temp = H[i - 1, j - 1] + sub_mat[x[i - 1] + y[j - 1]]
             H[i, j] = max(0, E[i, j], F[i, j], temp)
-    # print(H[len(x) - 1])
-    # print(H[len(x)])
     argmax = numpy.where(H == H.max())
     if len(argmax[0]) >= 2:
         argmax = (numpy.array([argmax[0][0]]), numpy.array([argmax[1][0]]))

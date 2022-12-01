@@ -21,6 +21,8 @@ def main():
     arg_parser.add_argument("--orf-file", help="Output file name that will store the amino acid sequence after orf "
                                                "extraction")
     arg_parser.add_argument("--kmer-size", help="Kmer size that is used to index the target (default = 7)", default=7)
+    arg_parser.add_argument("--gap-open", help="Gap open penalties used in scoring alignments", default=4)
+    arg_parser.add_argument("--gap-extend", help="Gap extend penalties used in scoring alignments", default=4)
     arg_parser.add_argument("query", help="The input DNA read file in FASTA/FASTQ format", action="store")
     arg_parser.add_argument("target", help="Target protein database in FASTA format", action="store")
     args = arg_parser.parse_args()
@@ -70,8 +72,11 @@ def main():
         sys.exit(1)
 
     kmer_size = int(args.kmer_size)
+    gap_open = int(args.gap_open)
+    gap_extend = int(args.gap_extend)
 
-    search.main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract_orf, orf_file)
+    search.main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
+                gap_open, gap_extend, extract_orf, orf_file)
 
 
 if __name__ == '__main__':

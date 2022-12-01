@@ -29,7 +29,8 @@ def write_aln(out_dir, out_file):
             fh.write(query + "\t" + aln[0] + "\t" + aln[1] + "\t" + str(aln[2]) + "\n")
 
 
-def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract_orf, orf_file=None):
+def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
+         gap_open, gap_extend, extract_orf, orf_file=None):
     print("successfully entered search main!")
     start = time.time()
     reads = pyfastx.Fastx(query_file)
@@ -62,7 +63,7 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract
         max_rf = 0
         global_max = -1
         global_aln = ()
-        global_mat = None
+        # global_mat = None
         # align all 6 reading frames
         for query in aa_seqs:
             rf = query[1]
@@ -77,19 +78,19 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size, extract
                 if len(query_pref) > 0:
                     local_max = -1
                     local_aln = ()
-                    local_mat = None
+                    # local_mat = None
                     for target_idx in query_pref:
                         # sw_mat, aln_score = align.sw_align(seq, prot_db.seq_index[target_idx][1], sub_mat)
                         sw_mat, aln_score = align.sw_align_affine(seq, prot_db.seq_index[target_idx][1],
-                                                                  11, 1, sub_mat)
+                                                                  gap_open, gap_extend, sub_mat)
                         if aln_score > local_max:
                             local_max = aln_score
-                            local_mat = sw_mat
+                            # local_mat = sw_mat
                             # target name, score
                             local_aln = (prot_db.seq_index[target_idx][0], prot_db.seq_index[target_idx][2], aln_score)
                     if local_max > global_max:
                         global_max = local_max
-                        global_mat = local_mat
+                        # global_mat = local_mat
                         global_aln = local_aln
                         max_rf = rf
                 else:
