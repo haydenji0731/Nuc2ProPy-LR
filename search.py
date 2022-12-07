@@ -61,6 +61,7 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     out_fa_path = os.path.join(out_dir, out_file)
+    fh = open(out_fa_path, 'w')
     for read_name in extractAA.aa_dict.keys():
         num_seq += 1
         aa_seqs = extractAA.aa_dict[read_name]
@@ -138,16 +139,18 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
                         conf += (max_score - global_max_arr[i][0])
                         conf_normal += conf / max_score
                         break
-            fh = open(out_fa_path, 'w')
+            # fh = open(out_fa_path, 'w')
             for i in range(len(global_max_arr)):
                 if i == 0:
                     fh.write(read_name + "\t" + global_max_arr[i][1] + "\t" + global_max_arr[i][2] + "\t" +
                              str(global_max_arr[i][0]) + "\t" + str(global_max_arr[i][3]) + "\t" + str(conf) +
                              "\t" + str(conf_normal) + "\n")
+                    fh.flush()
                 else:
                     fh.write(read_name + "\t" + global_max_arr[i][1] + "\t" + global_max_arr[i][2] + "\t" +
                          str(global_max_arr[i][0]) + "\t" + str(global_max_arr[i][3]) + "\n")
-            fh.close()
+                    fh.flush()
+            # fh.close()
         else:
             no_aln_seq += 1
             print("No alignment was found for read " + read_name)
@@ -163,6 +166,7 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
     #         no_aln_seq += 1
     #         print("No alignment was found for read " + read_name)
     # write_aln(out_dir, out_file)
+    fh.close()
     duration = time.time() - start
     print("Aligned %.0f reads / sequences in %.4fs. Of all, %.0f reads / sequences did not find an alignment."
           % (num_seq, duration, no_aln_seq))
