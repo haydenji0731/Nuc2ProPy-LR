@@ -7,6 +7,7 @@ import os
 
 num_seq = 0
 aa_dict = {}
+seq_len = 0
 templ = "ACGT"
 rev_compl = "TGCA"
 
@@ -15,8 +16,10 @@ def extract_aa(reads, trans_table):
     global aa_dict
     for read in reads:
         global num_seq
+        global seq_len
         num_seq += 1
         seq = read[1].upper()
+        seq_len += len(seq)
         rev_trans = str.maketrans(templ, rev_compl)
         seq_rev = seq.translate(rev_trans)[::-1]
         aa_seqs = []
@@ -32,9 +35,11 @@ def extract_aa(reads, trans_table):
                     aa_seq_rev += trans_table[0][codon_rev][0]
                 else:
                     break
-            aa_seqs.append((aa_seq, i + 1))
-            aa_seqs.append((aa_seq_rev, -(i + 1)))
+            aa_seqs.append((aa_seq, i + 1, len(seq)))
+            aa_seqs.append((aa_seq_rev, -(i + 1), len(seq)))
         aa_dict[read[0]] = aa_seqs
+    avg_len = seq_len / num_seq
+    print("The average read length of the input file is %.0f nt." % avg_len)
     # return aa_seqs
 
 

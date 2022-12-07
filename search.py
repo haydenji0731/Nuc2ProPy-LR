@@ -30,7 +30,7 @@ def write_aln(out_dir, out_file):
 
 
 def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
-         gap_open, gap_extend, extract_orf, orf_file=None):
+         gap_open, gap_extend, extract_orf, top_n, orf_file=None):
     print("successfully entered search main!")
     start = time.time()
     reads = pyfastx.Fastx(query_file)
@@ -61,14 +61,15 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     out_fa_path = os.path.join(out_dir, out_file)
-    fh = open(out_fa_path, 'w')
     for read_name in extractAA.aa_dict.keys():
         num_seq += 1
         aa_seqs = extractAA.aa_dict[read_name]
+        seq_len = aa_seqs[0][2]
+        # print(seq_len)
         max_rf = 0
         global_max = -1
         global_aln = ()
-        # report top 5 scoring alignments per read
+        # report top n scoring alignments per read
         global_max_arr = []
         # global_mat = None
         # align all 6 reading frames
@@ -86,12 +87,14 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
                     # local_max = -1
                     # local_aln = ()
                     # local_mat = None
+                    # print(len(query_pref))
                     for target_idx in query_pref:
+
                         # sw_mat, aln_score = align.sw_align(seq, prot_db.seq_index[target_idx][1], sub_mat)
                         sw_mat, aln_score = align.sw_align_affine(seq, prot_db.seq_index[target_idx][1],
                                                                   gap_open, gap_extend, sub_mat)
-                        aln = (aln_score, prot_db.seq_index[target_idx][0], prot_db.seq_index[target_idx][2], rf)
-                        if len(global_max_arr) < 5:
+                        aln = (aln_score, prot_db.seq_index[target_idx][0], prot_db.seq_index[target_idx][2], rf, seq_len)
+                        if len(global_max_arr) < top_n:
                             global_max_arr.append(aln)
                             global_max_arr.sort(reverse=True)
                         else:
@@ -99,7 +102,7 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
                             if global_max_arr[-1:][0][0] < aln_score:
                                 global_max_arr.append(aln)
                                 global_max_arr.sort(reverse=True)
-                                global_max_arr = global_max_arr[:5]
+                                global_max_arr = global_max_arr[:top_n]
                         # print(global_max_arr)
                         # default
                         # if aln_score > local_max:
@@ -122,9 +125,29 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
             print("\tProtein product is: " + global_max_arr[0][2])
             print("\tAlignment score is: " + str(global_max_arr[0][0]))
             print("Optimal alignment for read " + read_name + " was found in reading frame %.0f" % global_max_arr[0][3])
+            conf = 0
+            conf_normal = 0
             for i in range(len(global_max_arr)):
-                fh.write(read_name + "\t" + global_max_arr[i][1] + "\t" + global_max_arr[i][2] + "\t" +
+                seq_len = global_max_arr[0][4]
+                if i == 0:
+                    target_id = global_max_arr[i][1]
+                    max_score = global_max_arr[i][0]
+                else:
+                    if target_id != global_max_arr[i][1]:
+                        # normalize by max_score? seq_len?
+                        conf += (max_score - global_max_arr[i][0])
+                        conf_normal += conf / max_score
+                        break
+            fh = open(out_fa_path, 'w')
+            for i in range(len(global_max_arr)):
+                if i == 0:
+                    fh.write(read_name + "\t" + global_max_arr[i][1] + "\t" + global_max_arr[i][2] + "\t" +
+                             str(global_max_arr[i][0]) + "\t" + str(global_max_arr[i][3]) + "\t" + str(conf) +
+                             "\t" + str(conf_normal) + "\n")
+                else:
+                    fh.write(read_name + "\t" + global_max_arr[i][1] + "\t" + global_max_arr[i][2] + "\t" +
                          str(global_max_arr[i][0]) + "\t" + str(global_max_arr[i][3]) + "\n")
+            fh.close()
         else:
             no_aln_seq += 1
             print("No alignment was found for read " + read_name)
@@ -140,7 +163,6 @@ def main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
     #         no_aln_seq += 1
     #         print("No alignment was found for read " + read_name)
     # write_aln(out_dir, out_file)
-    fh.close()
     duration = time.time() - start
     print("Aligned %.0f reads / sequences in %.4fs. Of all, %.0f reads / sequences did not find an alignment."
           % (num_seq, duration, no_aln_seq))

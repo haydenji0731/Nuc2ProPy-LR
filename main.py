@@ -17,12 +17,13 @@ def main():
     arg_parser.add_argument("--aa-file", help="Output file name that will store all 6 reading frames amino acid "
                                               "sequence", action="store")
     arg_parser.add_argument("--extract-orf", help="Extract valid open reading frames from the input reads before "
-                                                  "alignment (default = False)", default=False)
+                                                  "alignment (default=False)", default=False)
     arg_parser.add_argument("--orf-file", help="Output file name that will store the amino acid sequence after orf "
                                                "extraction")
-    arg_parser.add_argument("--kmer-size", help="Kmer size that is used to index the target (default = 7)", default=7)
-    arg_parser.add_argument("--gap-open", help="Gap open penalties used in scoring alignments", default=4)
-    arg_parser.add_argument("--gap-extend", help="Gap extend penalties used in scoring alignments", default=4)
+    arg_parser.add_argument("--kmer-size", help="Kmer size that is used to index the target (default=7)", default=7)
+    arg_parser.add_argument("--gap-open", help="Gap open penalties used in scoring alignments (default=4)", default=4)
+    arg_parser.add_argument("--gap-extend", help="Gap extend penalties used in scoring alignments (default=4)", default=4)
+    arg_parser.add_argument("--top-n", help="Top n alignments are outputted (default=5)", default=5)
     arg_parser.add_argument("query", help="The input DNA read file in FASTA/FASTQ format", action="store")
     arg_parser.add_argument("target", help="Target protein database in FASTA format", action="store")
     args = arg_parser.parse_args()
@@ -74,9 +75,10 @@ def main():
     kmer_size = int(args.kmer_size)
     gap_open = int(args.gap_open)
     gap_extend = int(args.gap_extend)
+    top_n = int(args.top_n)
 
     search.main(query_file, target_file, out_dir, out_file, aa_file, kmer_size,
-                gap_open, gap_extend, extract_orf, orf_file)
+                gap_open, gap_extend, extract_orf, top_n, orf_file)
 
 
 if __name__ == '__main__':

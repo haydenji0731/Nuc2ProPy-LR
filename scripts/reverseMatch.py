@@ -3,6 +3,7 @@
 import sys
 import re
 
+
 def main(annot_file, protein_file):
     annot_fh = open(annot_file, 'r')
     cnt = 0
