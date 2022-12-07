@@ -1,0 +1,7 @@
+altgraph==0.17.3
+blosum==1.2.2
+macholib==1.16.2
+numpy==1.23.5
+pyfastx==0.8.4
+pyinstaller==5.7.0
+pyinstaller-hooks-contrib==2022.14
