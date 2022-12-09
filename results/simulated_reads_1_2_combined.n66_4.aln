@@ -3,3 +3,131 @@ TTN-lcl|NC-000002_5365;aligned_34_F_789_9460_2802	NP_596870.2	titin isoform nove
 TTN-lcl|NC-000002_5365;aligned_34_F_789_9460_2802	NP_596870.2	titin isoform novex-3 [Homo sapiens]	2176	1
 TTN-lcl|NC-000002_5365;aligned_34_F_789_9460_2802	NP_001254479.2	titin isoform IC [Homo sapiens]	1562	3
 TTN-lcl|NC-000002_5365;aligned_34_F_789_9460_2802	NP_001254479.2	titin isoform IC [Homo sapiens]	1492	2
+KMT2D-lcl|NC-000012_2521;aligned_35_F_5968_8269_7914	NP_003473.3	histone-lysine N-methyltransferase 2D [Homo sapiens]	3552	1	3364	0.9470720720720721
+KMT2D-lcl|NC-000012_2521;aligned_35_F_5968_8269_7914	NP_003473.3	histone-lysine N-methyltransferase 2D [Homo sapiens]	2907	3
+KMT2D-lcl|NC-000012_2521;aligned_35_F_5968_8269_7914	NP_003473.3	histone-lysine N-methyltransferase 2D [Homo sapiens]	2790	2
+KMT2D-lcl|NC-000012_2521;aligned_35_F_5968_8269_7914	NP_733751.2	histone-lysine N-methyltransferase 2C [Homo sapiens]	188	1
+KMT2D-lcl|NC-000012_2521;aligned_35_F_5968_8269_7914	NP_001381301.1	BRD4-interacting chromatin-remodeling complex-associated protein [Homo sapiens]	166	1
+MUC4-lcl|NC-000003_1873;aligned_36_F_4_11583_9	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	4072	2	3978	0.9769155206286837
+MUC4-lcl|NC-000003_1873;aligned_36_F_4_11583_9	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	3617	1
+MUC4-lcl|NC-000003_1873;aligned_36_F_4_11583_9	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	2993	3
+MUC4-lcl|NC-000003_1873;aligned_36_F_4_11583_9	NP_689931.2	von Willebrand factor C and EGF domain-containing protein precursor [Homo sapiens]	94	1
+MUC4-lcl|NC-000003_1873;aligned_36_F_4_11583_9	NP_001365386.1	dmX-like protein 2 isoform 4 [Homo sapiens]	61	3
+FREM2-lcl|NC-000013_2280;aligned_37_F_25193_1987_2342	NP_997244.4	FRAS1-related extracellular matrix protein 2 precursor [Homo sapiens]	773	1	719	0.9301423027166882
+FREM2-lcl|NC-000013_2280;aligned_37_F_25193_1987_2342	NP_997244.4	FRAS1-related extracellular matrix protein 2 precursor [Homo sapiens]	678	3
+FREM2-lcl|NC-000013_2280;aligned_37_F_25193_1987_2342	NP_997244.4	FRAS1-related extracellular matrix protein 2 precursor [Homo sapiens]	322	2
+FREM2-lcl|NC-000013_2280;aligned_37_F_25193_1987_2342	NP_001254479.2	titin isoform IC [Homo sapiens]	54	-2
+FREM2-lcl|NC-000013_2280;aligned_37_F_25193_1987_2342	NP_612369.3	capping protein, Arp2/3 and myosin-I linker protein 3 [Homo sapiens]	45	2
+OR12D2-lcl|NT-167247_56;aligned_38_R_914_408_11248	NP_039224.2	olfactory receptor 12D2 [Homo sapiens]	377	-2	281	0.7453580901856764
+OR12D2-lcl|NT-167247_56;aligned_38_R_914_408_11248	NP_039224.2	olfactory receptor 12D2 [Homo sapiens]	133	-3
+OR12D2-lcl|NT-167247_56;aligned_38_R_914_408_11248	NP_112221.1	olfactory receptor 12D3 [Homo sapiens]	96	-3
+OR12D2-lcl|NT-167247_56;aligned_38_R_914_408_11248	NP_001357414.2	olfactory receptor 7C1 [Homo sapiens]	89	-3
+OR12D2-lcl|NT-167247_56;aligned_38_R_914_408_11248	NP_039224.2	olfactory receptor 12D2 [Homo sapiens]	80	-1
+MUC4-lcl|NT-187689_2816;aligned_42_R_3243_2720_4839	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	761	-1	705	0.926412614980289
+MUC4-lcl|NT-187689_2816;aligned_42_R_3243_2720_4839	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	758	-3
+MUC4-lcl|NT-187689_2816;aligned_42_R_3243_2720_4839	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	700	-2
+MUC4-lcl|NT-187689_2816;aligned_42_R_3243_2720_4839	NP_003619.2	plakophilin-4 isoform a [Homo sapiens]	56	-1
+MUC4-lcl|NT-187689_2816;aligned_42_R_3243_2720_4839	NP_077733.3	CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase, mitochondrial precursor [Homo sapiens]	49	-2
+CCDC168-lcl|NC-000013_3340;aligned_43_R_18_13125_21	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4203	-3	4154	0.9883416607185344
+CCDC168-lcl|NC-000013_3340;aligned_43_R_18_13125_21	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4164	-1
+CCDC168-lcl|NC-000013_3340;aligned_43_R_18_13125_21	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4048	-2
+CCDC168-lcl|NC-000013_3340;aligned_43_R_18_13125_21	NP_872438.2	inactive sodium-dependent neutral amino acid transporter B(0)AT3 [Homo sapiens]	49	3
+CCDC168-lcl|NC-000013_3340;aligned_43_R_18_13125_21	NP_000395.3	beta-galactosidase isoform a preproprotein [Homo sapiens]	46	-2
+DNAH11-lcl|NC-000007_3517;aligned_44_F_12506_8875_40658	NP_001264044.1	dynein axonemal heavy chain 11 [Homo sapiens]	3393	1	1625	0.4789272030651341
+DNAH11-lcl|NC-000007_3517;aligned_44_F_12506_8875_40658	NP_001264044.1	dynein axonemal heavy chain 11 [Homo sapiens]	2669	3
+DNAH11-lcl|NC-000007_3517;aligned_44_F_12506_8875_40658	NP_001363.2	dynein axonemal heavy chain 9 isoform 2 [Homo sapiens]	1768	1
+DNAH11-lcl|NC-000007_3517;aligned_44_F_12506_8875_40658	NP_001264044.1	dynein axonemal heavy chain 11 [Homo sapiens]	1736	2
+DNAH11-lcl|NC-000007_3517;aligned_44_F_12506_8875_40658	NP_775899.3	dynein axonemal heavy chain 17 [Homo sapiens]	1729	1
+CCDC168-lcl|NC-000013_3414;aligned_49_R_5_14126_19	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4655	-1	4603	0.9888292158968851
+CCDC168-lcl|NC-000013_3414;aligned_49_R_5_14126_19	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4421	-3
+CCDC168-lcl|NC-000013_3414;aligned_49_R_5_14126_19	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4023	-2
+CCDC168-lcl|NC-000013_3414;aligned_49_R_5_14126_19	NP_061993.3	protocadherin beta-8 precursor [Homo sapiens]	52	3
+CCDC168-lcl|NC-000013_3414;aligned_49_R_5_14126_19	NP_061756.1	protocadherin beta-13 precursor [Homo sapiens]	50	3
+BIRC6-lcl|NC-000002_1305;aligned_53_F_2653_9142_4275	NP_057336.3	baculoviral IAP repeat-containing protein 6 isoform 1 [Homo sapiens]	2956	2	0	0
+BIRC6-lcl|NC-000002_1305;aligned_53_F_2653_9142_4275	NP_057336.3	baculoviral IAP repeat-containing protein 6 isoform 1 [Homo sapiens]	2161	1
+BIRC6-lcl|NC-000002_1305;aligned_53_F_2653_9142_4275	NP_057336.3	baculoviral IAP repeat-containing protein 6 isoform 1 [Homo sapiens]	2101	3
+ALMS1-lcl|NC-000002_6113;aligned_55_F_5858_4724_12686	NP_001365383.1	Alstrom syndrome protein 1 isoform 2 [Homo sapiens]	1677	1	1622	0.9672033392963626
+ALMS1-lcl|NC-000002_6113;aligned_55_F_5858_4724_12686	NP_001365383.1	Alstrom syndrome protein 1 isoform 2 [Homo sapiens]	1404	2
+ALMS1-lcl|NC-000002_6113;aligned_55_F_5858_4724_12686	NP_001365383.1	Alstrom syndrome protein 1 isoform 2 [Homo sapiens]	1175	3
+ALMS1-lcl|NC-000002_6113;aligned_55_F_5858_4724_12686	NP_932163.1	palmitoyltransferase ZDHHC16 isoform 1 precursor [Homo sapiens]	55	-3
+ALMS1-lcl|NC-000002_6113;aligned_55_F_5858_4724_12686	NP_620145.2	5'-3' exonuclease PLD4 isoform 2 [Homo sapiens]	49	-2
+RYR2-lcl|NC-000001_1269;aligned_61_R_23_11945_10	NP_001026.2	ryanodine receptor 2 [Homo sapiens]	3837	-1	1887	0.491790461297889
+RYR2-lcl|NC-000001_1269;aligned_61_R_23_11945_10	NP_001026.2	ryanodine receptor 2 [Homo sapiens]	3634	-2
+RYR2-lcl|NC-000001_1269;aligned_61_R_23_11945_10	NP_001026.2	ryanodine receptor 2 [Homo sapiens]	2306	-3
+RYR2-lcl|NC-000001_1269;aligned_61_R_23_11945_10	NP_001027.3	ryanodine receptor 3 isoform 1 [Homo sapiens]	1950	-1
+RYR2-lcl|NC-000001_1269;aligned_61_R_23_11945_10	NP_001027.3	ryanodine receptor 3 isoform 1 [Homo sapiens]	1893	-2
+AHNAK2-lcl|NC-000014_3567;aligned_63_R_0_11475_0	NP_612429.2	protein AHNAK2 isoform 1 [Homo sapiens]	4392	-2	3861	0.8790983606557377
+AHNAK2-lcl|NC-000014_3567;aligned_63_R_0_11475_0	NP_612429.2	protein AHNAK2 isoform 1 [Homo sapiens]	3734	-1
+AHNAK2-lcl|NC-000014_3567;aligned_63_R_0_11475_0	NP_612429.2	protein AHNAK2 isoform 1 [Homo sapiens]	2838	-3
+AHNAK2-lcl|NC-000014_3567;aligned_63_R_0_11475_0	NP_001611.1	neuroblast differentiation-associated protein AHNAK isoform 1 [Homo sapiens]	531	-2
+AHNAK2-lcl|NC-000014_3567;aligned_63_R_0_11475_0	NP_001611.1	neuroblast differentiation-associated protein AHNAK isoform 1 [Homo sapiens]	262	-3
+MUC12-lcl|NC-000007_2784;aligned_69_R_17_10750_3	NP_001157934.1	mucin-12 precursor [Homo sapiens]	4528	-1	4471	0.9874116607773852
+MUC12-lcl|NC-000007_2784;aligned_69_R_17_10750_3	NP_001157934.1	mucin-12 precursor [Homo sapiens]	3037	-3
+MUC12-lcl|NC-000007_2784;aligned_69_R_17_10750_3	NP_001157934.1	mucin-12 precursor [Homo sapiens]	2967	-2
+MUC12-lcl|NC-000007_2784;aligned_69_R_17_10750_3	NP_001365019.1	WASH complex subunit 1 [Homo sapiens]	57	-2
+MUC12-lcl|NC-000007_2784;aligned_69_R_17_10750_3	NP_001129522.1	dehydrogenase/reductase SDR family member 1 [Homo sapiens]	55	2
+DIP2B-lcl|NC-000012_857;aligned_70_F_9952_2571_11616	NP_775873.2	disco-interacting protein 2 homolog B [Homo sapiens]	1299	3	425	0.32717474980754424
+DIP2B-lcl|NC-000012_857;aligned_70_F_9952_2571_11616	NP_055789.1	disco-interacting protein 2 homolog C [Homo sapiens]	874	3
+DIP2B-lcl|NC-000012_857;aligned_70_F_9952_2571_11616	NP_055966.2	disco-interacting protein 2 homolog A isoform a [Homo sapiens]	873	3
+DIP2B-lcl|NC-000012_857;aligned_70_F_9952_2571_11616	NP_775873.2	disco-interacting protein 2 homolog B [Homo sapiens]	693	1
+DIP2B-lcl|NC-000012_857;aligned_70_F_9952_2571_11616	NP_055966.2	disco-interacting protein 2 homolog A isoform a [Homo sapiens]	429	1
+FSIP2-lcl|NC-000002_1236;aligned_72_F_9861_2902_6784	NP_775922.3	fibrous sheath-interacting protein 2 [Homo sapiens]	1137	1	1086	0.9551451187335093
+FSIP2-lcl|NC-000002_1236;aligned_72_F_9861_2902_6784	NP_775922.3	fibrous sheath-interacting protein 2 [Homo sapiens]	633	3
+FSIP2-lcl|NC-000002_1236;aligned_72_F_9861_2902_6784	NP_775922.3	fibrous sheath-interacting protein 2 [Homo sapiens]	620	2
+FSIP2-lcl|NC-000002_1236;aligned_72_F_9861_2902_6784	NP_055877.3	peroxisome proliferator-activated receptor gamma coactivator-related protein 1 isoform 1 [Homo sapiens]	51	3
+FSIP2-lcl|NC-000002_1236;aligned_72_F_9861_2902_6784	NP_055880.2	exophilin-5 isoform 1 [Homo sapiens]	49	3
+MUC4-lcl|NT-187532_3665;aligned_74_F_12_14586_0	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	3200	2	3127	0.9771875
+MUC4-lcl|NT-187532_3665;aligned_74_F_12_14586_0	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	3141	3
+MUC4-lcl|NT-187532_3665;aligned_74_F_12_14586_0	NP_060876.5	mucin-4 isoform a precursor [Homo sapiens]	2611	1
+MUC4-lcl|NT-187532_3665;aligned_74_F_12_14586_0	NP_001277250.1	dmX-like protein 1 isoform 1 [Homo sapiens]	73	1
+MUC4-lcl|NT-187532_3665;aligned_74_F_12_14586_0	NP_077816.1	phospholipid-transporting ATPase VA [Homo sapiens]	59	3
+HUWE1-lcl|NC-000023_19;aligned_75_F_12_12683_12	NP_113584.3	E3 ubiquitin-protein ligase HUWE1 [Homo sapiens]	3685	2	3505	0.9511533242876526
+HUWE1-lcl|NC-000023_19;aligned_75_F_12_12683_12	NP_113584.3	E3 ubiquitin-protein ligase HUWE1 [Homo sapiens]	3562	3
+HUWE1-lcl|NC-000023_19;aligned_75_F_12_12683_12	NP_113584.3	E3 ubiquitin-protein ligase HUWE1 [Homo sapiens]	2653	1
+HUWE1-lcl|NC-000023_19;aligned_75_F_12_12683_12	NP_061862.1	RNA-binding protein 27 [Homo sapiens]	180	-2
+HUWE1-lcl|NC-000023_19;aligned_75_F_12_12683_12	NP_061862.1	RNA-binding protein 27 [Homo sapiens]	169	2
+LRRC37A2-lcl|NT-167251_174;aligned_78_R_7362_4693_7	NP_001006608.2	leucine-rich repeat-containing protein 37A2 isoform 1 precursor [Homo sapiens]	1758	-2	9	0.005119453924914676
+LRRC37A2-lcl|NT-167251_174;aligned_78_R_7362_4693_7	NP_001006608.2	leucine-rich repeat-containing protein 37A2 isoform 1 precursor [Homo sapiens]	1755	-1
+LRRC37A2-lcl|NT-167251_174;aligned_78_R_7362_4693_7	NP_055649.4	leucine-rich repeat-containing protein 37A precursor [Homo sapiens]	1749	-2
+LRRC37A2-lcl|NT-167251_174;aligned_78_R_7362_4693_7	NP_055649.4	leucine-rich repeat-containing protein 37A precursor [Homo sapiens]	1730	-1
+LRRC37A2-lcl|NT-167251_174;aligned_78_R_7362_4693_7	NP_955372.2	leucine-rich repeat-containing protein 37A3 isoform 1 precursor [Homo sapiens]	1711	-1
+PKHD1-lcl|NC-000006_1873;aligned_80_F_5856_3499_76040	NP_619639.3	fibrocystin isoform 1 precursor [Homo sapiens]	1273	1	1203	0.9450117831893166
+PKHD1-lcl|NC-000006_1873;aligned_80_F_5856_3499_76040	NP_619639.3	fibrocystin isoform 1 precursor [Homo sapiens]	1102	2
+PKHD1-lcl|NC-000006_1873;aligned_80_F_5856_3499_76040	NP_619639.3	fibrocystin isoform 1 precursor [Homo sapiens]	867	3
+PKHD1-lcl|NC-000006_1873;aligned_80_F_5856_3499_76040	NP_056018.2	regulation of nuclear pre-mRNA domain-containing protein 2 isoform 1 [Homo sapiens]	70	3
+PKHD1-lcl|NC-000006_1873;aligned_80_F_5856_3499_76040	NP_073746.2	pleckstrin homology domain-containing family G member 2 isoform 1 [Homo sapiens]	56	3
+MUC12-lcl|NC-000007_1997;aligned_84_F_8_12283_5	NP_001157934.1	mucin-12 precursor [Homo sapiens]	4426	2	4363	0.9857659286037054
+MUC12-lcl|NC-000007_1997;aligned_84_F_8_12283_5	NP_001157934.1	mucin-12 precursor [Homo sapiens]	4176	3
+MUC12-lcl|NC-000007_1997;aligned_84_F_8_12283_5	NP_001157934.1	mucin-12 precursor [Homo sapiens]	3707	1
+MUC12-lcl|NC-000007_1997;aligned_84_F_8_12283_5	NP_110404.1	solute carrier family 2, facilitated glucose transporter member 10 [Homo sapiens]	63	3
+MUC12-lcl|NC-000007_1997;aligned_84_F_8_12283_5	NP_001129522.1	dehydrogenase/reductase SDR family member 1 [Homo sapiens]	54	-2
+CCDC168-lcl|NC-000013_1354;aligned_87_F_6_13879_7	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4692	3	0	0
+CCDC168-lcl|NC-000013_1354;aligned_87_F_6_13879_7	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	4598	2
+CCDC168-lcl|NC-000013_1354;aligned_87_F_6_13879_7	NP_001139669.1	coiled-coil domain-containing protein 168 [Homo sapiens]	3659	1
+LRP1-lcl|NC-000012_983;aligned_89_F_26_11665_11	NP_002323.2	prolow-density lipoprotein receptor-related protein 1 preproprotein [Homo sapiens]	3838	1	2350	0.6122980719124544
+LRP1-lcl|NC-000012_983;aligned_89_F_26_11665_11	NP_002323.2	prolow-density lipoprotein receptor-related protein 1 preproprotein [Homo sapiens]	3446	2
+LRP1-lcl|NC-000012_983;aligned_89_F_26_11665_11	NP_002323.2	prolow-density lipoprotein receptor-related protein 1 preproprotein [Homo sapiens]	3246	3
+LRP1-lcl|NC-000012_983;aligned_89_F_26_11665_11	NP_061027.2	low-density lipoprotein receptor-related protein 1B precursor [Homo sapiens]	1488	1
+LRP1-lcl|NC-000012_983;aligned_89_F_26_11665_11	NP_061027.2	low-density lipoprotein receptor-related protein 1B precursor [Homo sapiens]	1453	2
+AHNAK2-lcl|NC-000014_409_unaligned_91_R_0_15589_0	NP_114152.3	arf-GAP with GTPase, ANK repeat and PH domain-containing protein 3 isoform a [Homo sapiens]	64	-2	12	0.1875
+AHNAK2-lcl|NC-000014_409_unaligned_91_R_0_15589_0	NP_001032208.1	arf-GAP with GTPase, ANK repeat and PH domain-containing protein 1 isoform 1 [Homo sapiens]	52	-2
+AHNAK2-lcl|NC-000014_409_unaligned_91_R_0_15589_0	NP_005376.2	NK-tumor recognition protein isoform a [Homo sapiens]	45	3
+AHNAK2-lcl|NC-000014_409_unaligned_91_R_0_15589_0	NP_004037.1	ATP synthase subunit alpha, mitochondrial isoform a precursor [Homo sapiens]	45	3
+MUC4-lcl|NT-187532_1339_unaligned_93_R_0_17766_0	NP_037399.2	glutaminase liver isoform, mitochondrial isoform 1 precursor [Homo sapiens]	56	-1	0	0.0
+MUC4-lcl|NT-187532_1339_unaligned_93_R_0_17766_0	NP_001335645.1	lysine-specific demethylase 6B isoform 2 [Homo sapiens]	56	-1
+MUC4-lcl|NT-187532_1339_unaligned_93_R_0_17766_0	NP_009041.2	telomerase protein component 1 isoform 1 [Homo sapiens]	53	-2
+MUC4-lcl|NT-187532_1339_unaligned_93_R_0_17766_0	NP_055720.3	glutaminase kidney isoform, mitochondrial isoform 1 precursor [Homo sapiens]	47	-1
+MUC4-lcl|NT-187532_1339_unaligned_93_R_0_17766_0	NP_059488.2	cytochrome P450 3A4 isoform 1 [Homo sapiens]	46	-3
+MUC16-lcl|NW-025791807_383_unaligned_94_R_0_11329_0	NP_004752.1	ral guanine nucleotide dissociation stimulator-like 2 isoform 1 [Homo sapiens]	39	1	0	0
+MUC16-lcl|NW-025791807_2928_unaligned_96_R_0_11760_0	NP_055833.2	protein dopey-1 isoform a [Homo sapiens]	56	-1	5	0.08928571428571429
+MUC16-lcl|NW-025791807_2928_unaligned_96_R_0_11760_0	NP_009115.3	nischarin isoform 1 [Homo sapiens]	51	-3
+MUC16-lcl|NW-025791807_2928_unaligned_96_R_0_11760_0	NP_861447.3	nuclear receptor coactivator 7 isoform 1 [Homo sapiens]	46	-3
+MUC16-lcl|NW-025791807_2928_unaligned_96_R_0_11760_0	NP_065776.1	ataxin-7-like protein 1 isoform 1 [Homo sapiens]	46	-1
+MUC16-lcl|NW-025791807_2928_unaligned_96_R_0_11760_0	NP_001138846.1	DNA oxidative demethylase ALKBH2 isoform 1 [Homo sapiens]	42	-2
+MUC16-lcl|NW-025791807_13218_unaligned_97_F_0_13008_0	NP_067044.2	lymphocyte antigen 6 complex locus protein G5b precursor [Homo sapiens]	53	3	0	0
+MUC16-lcl|NW-025791807_1825_unaligned_98_F_0_16204_0	NP_112228.1	keratin-associated protein 1-3 [Homo sapiens]	54	-2	5	0.09259259259259259
+MUC16-lcl|NW-025791807_1825_unaligned_98_F_0_16204_0	NP_114163.1	keratin-associated protein 1-5 [Homo sapiens]	49	-2
+MUC16-lcl|NW-025791807_1825_unaligned_98_F_0_16204_0	NP_005874.1	adenomatous polyposis coli protein 2 isoform 1 [Homo sapiens]	47	-2
+MUC16-lcl|NW-025791807_1825_unaligned_98_F_0_16204_0	NP_002149.2	forkhead box protein N2 isoform a [Homo sapiens]	44	-2
+MUC16-lcl|NW-025791807_1825_unaligned_98_F_0_16204_0	NP_000029.2	adenomatous polyposis coli protein isoform b [Homo sapiens]	41	-2
+STARD9-lcl|NC-000015_27_unaligned_99_F_0_12160_0	NP_001229.1	G1/S-specific cyclin-E1 isoform 1 [Homo sapiens]	45	2	0	0
