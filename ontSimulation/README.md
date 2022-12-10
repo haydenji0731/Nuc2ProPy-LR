@@ -2,7 +2,7 @@
 
 We used [Nanosim](https://github.com/bcgsc/NanoSim) to generate in silico ONT reads.
 The reads we generated are intended to simulated a typical genomic read for H. sapiens. 
-Please follow instruction in the Nanosim repo to replicate the process through which we generated our reads. In total, we generated 123 in silico ONT reads, consiting of 103 aligned reads and 20 unaligned reads. We used the reference fasta that only contained CDS regions of the human genome. The reference is also provided in this directory.
+Please follow instruction in the Nanosim repo to replicate the process through which we generated our reads. In total, we generated 123 in silico ONT reads, consiting of 103 aligned reads and 20 unaligned reads. We used the reference fasta that only contained CDS regions of the human genome. The reference fasta can be obtained [here] (https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/annotation_releases/110/GCF_000001405.40_GRCh38.p14/).
 We used the pre-trained **human_NA12878_DNA_FAB49712_guppy** error profile. The command that was used is as follows:
 
 ```
