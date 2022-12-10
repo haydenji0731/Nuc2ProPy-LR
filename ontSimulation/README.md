@@ -17,3 +17,8 @@ This ground truth alignment results file can be found here:
 ```
 ./reads/simulated_reads_1_2_combined.aln
 ```
+This directory also contains helper python scripts that were used to annotate each read with its true label. 
+
+1. alterFasta.py --> alter the reference fasta for the identifier starts with a gene name so it can later be used to identify which protein the read should align to. By default, Nanosim takes a prefix of the identifier in the reference fasta so this step was necessary
+2. findProtByGene.py --> find the protein that correspond to a gene
+3. processUnaligned.py --> assign '.' to each unaligned read
