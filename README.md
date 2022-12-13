@@ -1,4 +1,4 @@
-# Long DNA Read to Protein Aligner
+# Nuc2ProPy-LR: Long DNA Reads 2 Protein Aligner
 
 We aim to convert DNA sequence reads into amino acid sequences and then search against large-scale protein databases.
 
