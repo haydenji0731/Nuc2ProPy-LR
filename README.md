@@ -18,17 +18,17 @@ pip install -r requirements.txt
 Then, to build the program into an executable, run:
 
 ```
-$ pyinstaller main.py --onefile -n lonblast
+$ pyinstaller main.py --onefile -n nuc2propy
 $ cd dist
 ```
 
 Finally, in your command line prompt, run:
 
 ```
-$ ./lonblast -h
+$ ./nuc2propy -h
 ```
 Proceed by reading the help message. Additionally, there are some benchmark datasets available in the data directory. An examplar run command is:
 
 ```
-$ ./lonblast --out-dir ../results --out-file simulated_reads_1_2_combined.aln --aa-file simulated_reads_1_2_combined.aa.fa ../ontSimulation/reads/simulated_reads_1_2_combined.fasta ../data/MANE.GRCh38.v1.0.refseq_protein.faa --kmer-size 9 --gap-open 11 --gap-extend 1
+$ ./nuc2propy --out-dir ../results --out-file simulated_reads_1_2_combined.aln --aa-file simulated_reads_1_2_combined.aa.fa ../ontSimulation/reads/simulated_reads_1_2_combined.fasta ../data/MANE.GRCh38.v1.0.refseq_protein.faa --kmer-size 9 --gap-open 11 --gap-extend 1
 ```
