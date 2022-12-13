@@ -31,6 +31,7 @@ def main(in_file, gtf_file, out_dir, out_file, read_file):
                             protein_id = f[1].replace('"', '')
                             # print("protein is: " + protein_id)
                             out_fh.write(name + "\t" + protein_id + "\n")
+                            # could have kept the non-MANE reads as negatives...
                             read_fh.write(">" + read[0] + "\n" + read[1] + "\n" + "+\n" + read[2] + "\n")
                             break
                     break

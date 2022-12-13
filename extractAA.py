@@ -37,6 +37,9 @@ def extract_aa(reads, trans_table):
                     break
             aa_seqs.append((aa_seq, i + 1, len(seq)))
             aa_seqs.append((aa_seq_rev, -(i + 1), len(seq)))
+        if read[0] in aa_dict.keys():
+            print("i love u, 지뜌")
+            print(read[0])
         aa_dict[read[0]] = aa_seqs
     avg_len = seq_len / num_seq
     print("The average read length of the input file is %.0f nt." % avg_len)
@@ -48,7 +51,6 @@ def write_output_fasta(out_dir, fa_name):
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     out_fa_path = os.path.join(out_dir, fa_name)
-    # print(out_fa_path)
     with open(out_fa_path, 'w') as fh:
         for read_name in aa_dict.keys():
             aa_seqs = aa_dict[read_name]
